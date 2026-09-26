@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Διερευνητική μάθηση – Ανακαλύπτω τι συμβαίνει στην ενέργεια των υποστιβάδων</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=ubTuzSpp_A703M03S0eR34KSfJunHfTn6GXqdFfbJiuA04qXncZRLH8fBiOZskIQrcG573m8CobLYEZ97RZuS5E1YO2tOqkn4jojriNtBfZkIYDEy73_1CAUxn3AGtGyoC8QpDl_l-fQHNKcWTldoNbZQOdpHw8S7Fa2dCAUOpRndv70q_7dUzpjGAdTTsVS12T_k43grmf5Nq2RGUv5O4p0oc4n-Fm4qFiJsE0Tys_1MxcBli_uYWSloH5Zlsktf3OMsOAtokykwpX6kPo9UstRqGK97Gi5tqDFEicHvLA1WCPf5fcZzbzTaU70AzYvY0mI8TT2UPKMAGyRV5iMQP_op266JqQn3exg5GadihoHZn6vvuA-petZJvmiZ4M-pIz8DGDQ3ASPsjm4VR46ZFAmKS6ts2rk1MXioeDqhxuwYusImgd9F9Pt5btTnH9BArs5YWo3NqfUmB93RO0HlWJ4gBdPjybVjI0AjzbTkwHPGw1BQNMuaJfqOKRMup4GE-rIh1lHPqsJGkZZvjd2ZczcqdGA9NNiBg95AiKZp02ZEO3ix424rDoT0oK9H5yfCs8CjiaaXycANtPPV4_cWd7cfQevS2HgDoogGpy9fueHtKVqeeYiYuLZjv-UUnrjKa7Rii2YiJux_VomJ_bPsGROCClHgioRQmOF91g-kSyj-pz19vTOE5rCCwqIsyWP" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMGFhMTQ4MjEwYjI0NWRjNmIwM2I2YjRjNiZmbj0yJUNFJUI3XyVDRSU5NCVDRSVCOSVDRSVCMSVDRSVCNCVDRiU4MSVDRSVCMSVDRiU4MyVDRiU4NCVDRSVCOSVDRSVCQSVDRSVBRV8lQ0UlQTAlQ0YlODElQ0UlQkYlQ0YlODMlQ0UlQkYlQ0UlQkMlQ0UlQkYlQ0UlQUYlQ0YlODklQ0YlODMlQ0UlQjdfJUNFJTk1JUNFJUJCJUNFJUFDJUNGJTg3JUNFJUI5JUNGJTgzJUNGJTg0JUNFJUI3XyVDRSU5NSVDRSVCRCVDRSVBRCVDRiU4MSVDRSVCMyVDRSVCNSVDRSVCOSVDRSVCMV8lQ0UlOTQlQ0UlQjklQ0UlQkYlQ0YlODElQ0UlQjglQ0YlODklQ0UlQkMlQ0UlQUQlQ0UlQkQlQ0UlQjcuaHRtbCZjZD1hdHRhY2htZW50JnRzPTQ5NzM0NSZwPWZzJmNpZD0xJnNpZz1lYTAzMDgzMTFjN2FjZjJmODMwOWE1OTA3ZmQ1YjJhOTBjMjZjZmI2NjhhZWJkNDhkNzM5MjNiNGM5OTc3Zjk0JnY9MA"/><style>
+body{font-family:Arial,sans-serif;background:#eef5fb;margin:0;color:#17324d}
+.container{max-width:1050px;margin:25px auto;background:white;border-radius:18px;padding:28px;box-shadow:0 5px 20px #0002}
+h1{color:#145a8d;margin-top:0}
+h2{color:#176b9f}
+.card{background:#f7fbff;border:1px solid #cfe3f2;border-radius:14px;padding:20px;margin:18px 0}
+button{background:#176b9f;color:white;border:0;border-radius:9px;padding:11px 18px;margin:6px;cursor:pointer;font-size:16px}
+button:hover{background:#0e527d}
+.option{background:white;color:#17324d;border:2px solid #9fc5dc;min-width:110px}
+.option.selected{border-color:#176b9f;background:#e3f2fb}
+.screen{display:none}
+.screen.active{display:block}
+.nav{display:flex;justify-content:space-between;margin-top:20px}
+.levels{position:relative;height:250px;border-bottom:2px solid #7b9bb2;margin:20px}
+.level{position:absolute;height:5px;background:#176b9f;border-radius:4px;width:42%}
+.label{position:absolute;font-weight:bold}
+.e4s{bottom:65px;left:8%}
+.e3d{bottom:150px;left:52%}
+.e4s2{bottom:150px;left:8%}
+.e3d2{bottom:65px;left:52%}
+.note{padding:12px;background:#fff8d8;border-left:5px solid #d6ad00;border-radius:8px}
+.electron{display:inline-block;background:#176b9f;color:white;border-radius:50%;width:27px;height:27px;line-height:27px;text-align:center;margin:4px}
+.small{color:#5b7080}
+</style>
+</head>
+<body>
+<div class="container">
+<div class='small' style='font-weight:bold;color:#176b9f;margin-bottom:8px'>ΔΙΕΡΕΥΝΗΤΙΚΗ ΜΑΘΗΣΗ</div><h1>Ανακαλύπτω τι συμβαίνει στην ενέργεια των υποστιβάδων</h1><p class='small'>Διαδραστική διερευνητική προσομοίωση – Χημεία Γ΄ Λυκείου</p>
+
+<section class="screen active" id="s1">
+<h2>1. Παρατηρώ τις ενεργειακές στάθμες</h2>
+<div class="card">
+<p>Παρατήρησε τις ενεργειακές στάθμες των <b>4s</b> και <b>3d</b> πριν από την εισαγωγή ηλεκτρονίων στην 3d.</p>
+<div class="levels">
+<div class="level e4s"></div><div class="label" style="left:8%;bottom:82px">4s</div>
+<div class="level e3d"></div><div class="label" style="left:52%;bottom:167px">3d</div>
+</div>
+<p><b>Ποια υποστιβάδα έχει μικρότερη ενέργεια;</b></p>
+<button class="option" onclick="feedback(this,'Σωστά. Στην αρχική κατάσταση η 4s έχει μικρότερη ενέργεια.')">4s</button>
+<button class="option" onclick="feedback(this,'Παρατήρησε ξανά τη θέση των δύο ενεργειακών σταθμών.')">3d</button>
+<p id="fb" class="note"></p>
+</div>
+</section>
+
+<section class="screen" id="s2">
+<h2>2. Θυμάμαι και προβλέπω</h2>
+<div class="card">
+<p>Από όσα ήδη γνωρίζεις για την αρχική ενεργειακή σειρά των υποστιβάδων, η <b>4s</b> έχει μικρότερη ενέργεια από την <b>3d</b>.</p>
+<p><b>Ένα ηλεκτρόνιο μπορεί να τοποθετηθεί είτε στην 4s είτε στην 3d. Ποια υποστιβάδα θα καταλάβει πρώτη;</b></p>
+<button class="option" onclick="choose(this)">4s</button>
+<button class="option" onclick="choose(this)">3d</button>
+<p id="choice" class="note"></p>
+</div>
+</section>
+
+<section class="screen" id="s3">
+<h2>3. Παρατηρώ την ενεργειακή σχέση με την εισαγωγή ηλεκτρονίων στην 4s και 3d</h2>
+<div class="card">
+<p>Αρχικά, η <b>4s</b> έχει μικρότερη ενέργεια από την <b>3d</b>.</p>
+<div class="note"><b>Βήμα 1:</b> Τοποθέτησε πρώτα <b>2 ηλεκτρόνια στην 4s</b>.</div>
+<div id="electrons4s" style="margin:12px 0;min-height:35px"></div>
+<button id="fill4sBtn" onclick="fill4s()">➕ Εισάγω ένα ηλεκτρόνιο στην 4s</button>
+<p id="count4s" class="small"><b>Ηλεκτρόνια στην 4s: 0 από 2</b></p>
+<div class="note" style="margin-top:18px"><b>Βήμα 2:</b> Στη συνέχεια εισάγουμε έως <b>10 ηλεκτρόνια στην 3d</b> και παρατηρούμε την ενεργειακή σχέση των δύο υποστιβάδων.</div>
+<div id="electrons3d" style="margin:12px 0;min-height:35px"></div>
+<button id="fill3dBtn" onclick="fill3d()" disabled>➕ Εισάγω ένα ηλεκτρόνιο στην 3d</button>
+<p id="count3d" class="small"><b>Ηλεκτρόνια στην 3d: 0 από 10</b></p>
+<div class="levels">
+<div class="level" id="d4s" style="bottom:65px;left:8%"></div><div class="label" id="lab4s" style="left:8%;bottom:82px">4s</div>
+<div class="level" id="d3d" style="bottom:150px;left:52%"></div><div class="label" id="lab3d" style="left:52%;bottom:167px">3d</div>
+</div>
+<p><b>Τι παρατηρείς</b> στην ενεργειακή σχέση των 4s και 3d όταν αρχίζουν να εισάγονται ηλεκτρόνια στην 3d;</p>
+<button class="option" onclick="feedback3(this,'3d')">Η 3d αποκτά μικρότερη ενέργεια από την 4s</button>
+<button class="option" onclick="feedback3(this,'4s')">Η 4s παραμένει χαμηλότερα από την 3d</button>
+<p id="fb3" class="note"></p>
+<p><b>Κατέγραψε την παρατήρησή σου:</b></p>
+<textarea id="obs3" style="width:95%;height:70px" placeholder="Τι άλλαξε στην ενεργειακή σχέση των 4s και 3d;"></textarea>
+</div></section>
+
+<section class="screen" id="s4">
+<h2>4. Πριν και μετά</h2>
+<div class="card">
+<p>Σύγκρινε τις δύο καταστάσεις.</p>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px"><h3>Πριν</h3><div class="levels">
+<div class="level e4s"></div><div class="label" style="left:8%;bottom:82px">4s</div>
+<div class="level e3d"></div><div class="label" style="left:52%;bottom:167px">3d</div></div></div>
+<div style="flex:1;min-width:300px"><h3>Μετά την εισαγωγή ηλεκτρονίων στην 3d</h3><div class="levels">
+<div class="level e4s2"></div><div class="label" style="left:8%;bottom:167px">4s</div>
+<div class="level e3d2"></div><div class="label" style="left:52%;bottom:82px">3d</div></div></div>
+</div>
+<p><b>Παραμένει ίδια η ενεργειακή σχέση των 4s και 3d πριν και μετά την εισαγωγή ηλεκτρονίων στην 3d;</b></p>
+<button class="option" onclick="feedback4(this,'Παρατήρησε ξανά τα δύο διαγράμματα και σύγκρινε τη σχετική θέση των 4s και 3d.')">Ναι</button>
+<button class="option" onclick="feedback4(this,'Σωστά. Η ενεργειακή σχέση των 4s και 3d μεταβάλλεται.')">Όχι</button>
+<p id="fb2" class="note"></p>
+</div>
+</section>
+
+<section class="screen" id="s5">
+<h2>5. Παρατηρώ μια αντίστοιχη περίπτωση</h2>
+<div class="card">
+<p><b>Παρατήρησε προσεκτικά τα δύο διαγράμματα και σύγκρινέ τα.</b></p>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<div style="flex:1;min-width:300px">
+<h3>Πριν την εισαγωγή ηλεκτρονίων στην 4d</h3>
+<div class="levels">
+<div class="level e4s"></div><div class="label" style="left:8%;bottom:82px">5s</div>
+<div class="level e3d"></div><div class="label" style="left:52%;bottom:167px">4d</div>
+</div>
+</div>
+<div style="flex:1;min-width:300px">
+<h3>Μετά την εισαγωγή ηλεκτρονίων στην 4d</h3>
+<div class="levels">
+<div class="level e4s2"></div><div class="label" style="left:8%;bottom:167px">5s</div>
+<div class="level e3d2"></div><div class="label" style="left:52%;bottom:82px">4d</div>
+</div>
+</div>
+</div>
+<p><b>Μετά την εισαγωγή ηλεκτρονίων στην 4d, ποια υποστιβάδα βρίσκεται χαμηλότερα ενεργειακά;</b></p>
+<textarea style="width:95%;height:70px"></textarea>
+</div>
+</section>
+
+<section class="screen" id="s6">
+<h2>6. Υδρογόνο και υδρογονοειδή</h2>
+<div class="card">
+<p><b>Παρατήρησε προσεκτικά το διάγραμμα.</b></p>
+<h3>Υδρογόνο και υδρογονοειδή</h3>
+<div class="levels">
+<div class="level" style="bottom:125px;left:8%;width:35%"></div>
+<div class="label" style="left:8%;bottom:142px">2s</div>
+<div class="level" style="bottom:125px;left:52%;width:35%"></div>
+<div class="label" style="left:52%;bottom:142px">2p</div>
+</div>
+<p><b>Τι παρατηρείς για τις ενεργειακές στάθμες των υποστιβάδων της ίδιας στιβάδας;</b></p>
+<textarea style="width:95%;height:65px"></textarea>
+<p><b>Πώς διαφέρει αυτή η ενεργειακή συμπεριφορά από εκείνη που παρατήρησες στα πολυηλεκτρονικά άτομα;</b></p>
+<textarea style="width:95%;height:65px"></textarea>
+</div>
+</section>
+
+<section class="screen" id="s7">
+<h2>7. Τι ανακαλύψαμε; Έλεγχος γνώσης</h2>
+<div class="card">
+<p>Συμπλήρωσε τα κενά με τις κατάλληλες λέξεις.</p>
+<p>Στα πολυηλεκτρονικά άτομα, η σχετική ενέργεια ορισμένων υποστιβάδων μπορεί να
+<input id="a1" style="width:150px"> όταν εισάγονται ηλεκτρόνια σε αυτές.</p>
+<p>Η ενεργειακή σχέση <input id="a2" style="width:70px"> και <input id="a3" style="width:70px"> αποτελεί χαρακτηριστικό παράδειγμα.</p>
+<p>Η ενεργειακή συμπεριφορά των υποστιβάδων στα πολυηλεκτρονικά άτομα διαφέρει από εκείνη του
+<input id="a4" style="width:110px"> και των <input id="a5" style="width:120px">.</p>
+<button onclick="checkAnswers()">Έλεγχος</button>
+<p id="result" class="note" style="display:none"></p>
+</div>
+</section>
+
+<div class="nav">
+<button onclick="prev()">‹ Προηγούμενη</button>
+<button id="nextBtn" onclick="next()">Επόμενη ›</button>
+</div>
+</div>
+
+<script>
+let cur=1, n=7, ec=0;
+function show(i){
+document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+document.getElementById('s'+i).classList.add('active');
+cur=i;
+document.getElementById('nextBtn').textContent=(cur===n?'Τέλος':'Επόμενη ›');
+window.scrollTo(0,0)
+}
+function next(){if(cur<n)show(cur+1)}
+function prev(){if(cur>1)show(cur-1)}
+function choose(b){
+document.querySelectorAll('#s2 .option').forEach(x=>x.classList.remove('selected'));
+b.classList.add('selected');
+const choice=document.getElementById('choice');
+if(b.textContent.trim()==='4s'){
+choice.textContent='Σωστά. Αφού η 4s έχει μικρότερη ενέργεια από την 3d, σύμφωνα με την Αρχή της Ελάχιστης Ενέργειας η 4s καταλαμβάνεται πρώτη.';
+}else{
+choice.textContent='Η πρόβλεψή σου καταγράφηκε. Η 4s έχει μικρότερη ενέργεια από την 3d, επομένως έλεγξε ξανά ποια υποστιβάδα καταλαμβάνεται πρώτη.';
+}
+}
+function feedback(b,t){
+document.querySelectorAll('#s'+cur+' .option').forEach(x=>x.classList.remove('selected'));
+b.classList.add('selected');
+const el=document.getElementById(cur===1?'fb':'choice');
+if(el) el.textContent=t;
+}
+function fill4s(){
+ if(ec<2) ec++;
+ const box=document.getElementById('electrons4s'); box.innerHTML='';
+ for(let i=0;i<ec;i++){let s=document.createElement('span');s.className='electron';s.textContent='e⁻';box.appendChild(s);}
+ document.getElementById('count4s').innerHTML='<b>Ηλεκτρόνια στην 4s: '+ec+' από 2</b>';
+ if(ec===2){document.getElementById('fill4sBtn').disabled=true;document.getElementById('fill4sBtn').textContent='Η 4s συμπληρώθηκε με 2 ηλεκτρόνια';document.getElementById('fill3dBtn').disabled=false;}
+}
+let ec3d=0;
+function fill3d(){
+ if(ec3d<10) ec3d++;
+ const box=document.getElementById('electrons3d'); box.innerHTML='';
+ for(let i=0;i<ec3d;i++){let s=document.createElement('span');s.className='electron';s.textContent='e⁻';box.appendChild(s);}
+ document.getElementById('count3d').innerHTML='<b>Ηλεκτρόνια στην 3d: '+ec3d+' από 10</b>';
+ if(ec3d>=1){document.getElementById('d4s').style.bottom='150px';document.getElementById('lab4s').style.bottom='167px';document.getElementById('d3d').style.bottom='65px';document.getElementById('lab3d').style.bottom='82px';}
+ if(ec3d===10){document.getElementById('fill3dBtn').disabled=true;document.getElementById('fill3dBtn').textContent='Η 3d συμπληρώθηκε με 10 ηλεκτρόνια';}
+}
+function feedback3(b,which){
+ document.querySelectorAll('#s3 .option').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');
+ document.getElementById('fb3').textContent=which==='3d'?'Σωστά. Με την εισαγωγή ηλεκτρονίων στην 3d, η 3d εμφανίζεται με μικρότερη ενέργεια από την 4s.':'Παρατήρησε ξανά το διάγραμμα μετά την εισαγωγή ηλεκτρονίων στην 3d.';
+}
+
+function showCompare(){document.getElementById('compare').style.display='block'}
+function feedback4(b,t){
+document.querySelectorAll('#s4 .option').forEach(x=>x.classList.remove('selected'));
+b.classList.add('selected');
+document.getElementById('fb2').textContent=t;
+}
+function checkAnswers(){
+const vals=[a1.value.trim().toLowerCase(),a2.value.trim().toLowerCase(),a3.value.trim().toLowerCase(),a4.value.trim().toLowerCase(),a5.value.trim().toLowerCase()];
+const ok= ['μεταβάλλεται','μεταβαλλεται'].includes(vals[0]) && vals[1]=='4s' && vals[2]=='3d' && ['υδρογόνου','υδρογονου'].includes(vals[3]) && ['υδρογονοειδών','υδρογονοειδων'].includes(vals[4]);
+result.style.display='block'; result.innerHTML=ok?'Πολύ καλά. Συμπλήρωσες σωστά όλα τα βασικά συμπεράσματα.':'Έλεγξε ξανά τις απαντήσεις σου. Οι σωστές λέξεις είναι: <b>μεταβάλλεται</b>, <b>4s</b>, <b>3d</b>, <b>υδρογόνου</b>, <b>υδρογονοειδών</b>.';
+}
+show(1);
+</script>
+</body>
+</html>
