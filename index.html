@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Πού θα τοποθετηθεί πρώτα το ηλεκτρόνιο;</title>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=3eIK5wnFs0z2tpN-hI3cQRVlEdwDiwqzAwOEq8t1QDHCj2m5XyPuLWjomTg283ruzXOksQw50sY_WBccn89fqTTIDw9KRthVH3mF5707-4f4d21SdPTrJIMvgKZJpkl6WOZcyD2668AusUnCpGdA5XRzt2BrjCvIuwcqicQEDKcU2BubKRq3DYXZCtuiYMPLEEdaq2-rBrZu9zj-AKIrW8g2e-_kma6VYKPk0cJDc2WTB9gybCiq3G_z2KT58tj_07oDJkocuKIvoYTAcAjD46fJv4ciOhWddAP7Sk0AjiM18ryGepS5ULuGf4DnI0Hwza2wX9GWqcQAJZKnnTtVCuhPIeJIgaKzMf2H5oP-_-O5-wPuMZlYm2E07XumBK9h" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9jaGF0Z3B0LmNvbS9iYWNrZW5kLWFwaS9lc3R1YXJ5L2NvbnRlbnQ_aWQ9ZmlsZV8wMDAwMDAwMGRlNjQ4MjEwYjQyMGY1NmQwNWE5YzMzMCZmbj1Qcm9zb21vaSVDRiU4OSVDRiU4MyVDRSVCN19FbGF4aXN0aXNfRW5lcmdlaWFzX25wbHVzbF9jbGVhbi5odG1sJmNkPWF0dGFjaG1lbnQmdHM9NDk3MzM3JnA9ZnMmY2lkPTEmc2lnPTE1MzljOGJmNDhmMWZhMDk0ZDJmNmEzNDI0NDY3ZDQ0MDgxMTA2Y2Y3ZTk4YWM5YjQzZDkyM2ExNTM0YjY0ZDgmdj0w"/><style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial,"Noto Sans",sans-serif;background:linear-gradient(135deg,#eaf3ff 0%,#d8eaff 45%,#c6dcf5 100%);color:#17202a}
+  .app{max-width:1100px;margin:0 auto;min-height:100vh;background:white;box-shadow:0 0 30px rgba(15,55,95,.18);border-top:7px solid #2563eb}
+  header{padding:22px 30px 16px;border-bottom:1px solid #c9d9ea;background:linear-gradient(180deg,#f7fbff,#eef6ff)}
+  h1{margin:0;font-size:27px}
+  .subtitle{margin-top:6px;color:#52606d}
+  .progress{display:flex;gap:7px;margin-top:16px}
+  .dot{height:8px;flex:1;border-radius:5px;background:#d8dee6}
+  .dot.active{background:#3b82f6}
+  main{padding:28px 34px 20px;min-height:620px}
+  .screen{display:none}
+  .screen.active{display:block}
+  h2{font-size:25px;margin:0 0 18px}
+  h3{margin:20px 0 10px}
+  .intro{font-size:18px;line-height:1.55;background:#f7fafc;border-left:5px solid #3b82f6;padding:16px 18px;border-radius:8px}
+  .question{font-size:20px;font-weight:700;margin:25px 0 16px}
+  .choices{display:flex;gap:14px;flex-wrap:wrap}
+  button{font:inherit;border:0;border-radius:9px;padding:12px 18px;cursor:pointer}
+  .choice{background:#eef2f7;border:2px solid #d5dce5;min-width:145px}
+  .choice:hover{background:#e4ebf4}
+  .choice.selected{border-color:#2563eb;background:#dbeafe}
+  .primary{background:#2563eb;color:white}
+  .secondary{background:#e8edf3;color:#17202a}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .feedback{margin-top:14px;padding:12px 15px;border-radius:8px;display:none}
+  .feedback.show{display:block;background:#eef6ff}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  table{border-collapse:collapse;width:100%;margin:15px 0;font-size:17px}
+  th,td{border:1px solid #cfd7e1;padding:10px;text-align:center}
+  th{background:#eef3f8}
+  .energy{height:260px;position:relative;border:1px solid #d4dce5;border-radius:10px;background:linear-gradient(#fff,#f8fafc);margin-top:15px}
+  .energy .axis{position:absolute;left:28px;top:18px;bottom:18px;width:2px;background:#9aa7b4}
+  .energy .label{position:absolute;left:42px;font-weight:700}
+  .level{position:absolute;left:125px;right:35px;height:3px;background:#2563eb}
+  .level span{position:absolute;left:0;top:-26px;font-weight:700}
+  .l1{top:205px}.l2{top:155px}.l3{top:105px}.l4{top:55px}
+  .small{font-size:14px;color:#5d6875}
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:18px 0}
+  .card{border:1px solid #d5dde6;border-radius:10px;padding:16px;background:#fbfcfe}
+  .big{font-size:24px;font-weight:700}
+  .result{font-size:18px;padding:14px;border-radius:8px;background:#f1f7f2;margin-top:14px;display:none}
+  .result.show{display:block}
+  .fill{border-bottom:2px solid #64748b;display:inline-block;min-width:110px;height:24px}
+  .final{background:#f7fafc;border:1px solid #d8e0e8;border-radius:10px;padding:18px;margin-top:20px}
+  footer{padding:16px 30px;border-top:1px solid #dce3ea;display:flex;justify-content:space-between;align-items:center}
+  #counter{color:#5d6875}
+  @media(max-width:750px){main{padding:22px 18px}.grid,.pair{grid-template-columns:1fr}.choices{flex-direction:column}.choice{width:100%}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+  <h1>Πού θα τοποθετηθεί πρώτα το ηλεκτρόνιο;</h1>
+  <div class="subtitle">Διερευνητική προσομοίωση: Αρχή της Ελάχιστης Ενέργειας</div>
+  <div class="progress">
+    <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+
+</header>
+
+<main>
+<section class="screen active" id="s1">
+  <h2>1. Το αρχικό πρόβλημα</h2>
+  <div class="intro">
+    Τα ηλεκτρόνια κατανέμονται στις διαθέσιμες υποστιβάδες με τρόπο που οδηγεί το άτομο σε μεγαλύτερη σταθερότητα και στη χαμηλότερη δυνατή ενέργεια.
+  </div>
+  <div class="question">Αν ένα ηλεκτρόνιο μπορεί να τοποθετηθεί είτε στην 4s είτε στην 3d υποστιβάδα, πού θα τοποθετηθεί πρώτα;</div>
+  <div class="choices">
+    <button class="choice" data-choice="4s" onclick="selectChoice(this,'prediction')">4s</button>
+    <button class="choice" data-choice="3d" onclick="selectChoice(this,'prediction')">3d</button>
+    <button class="choice" data-choice="unknown" onclick="selectChoice(this,'prediction')">Δεν μπορώ ακόμη να προβλέψω</button>
+  </div>
+  <div id="predFeedback" class="feedback"></div>
+  <div id="predictionReview" class="feedback" style="margin-top:18px">
+    <b>Η πρόβλεψή μου:</b> <span id="predictionText"></span>
+    <div style="margin-top:10px">
+      <button class="secondary" onclick="reviewPrediction()">Επαναλαμβάνω / αλλάζω την πρόβλεψή μου</button>
+    </div>
+  </div>
+
+</section>
+
+<section class="screen" id="s2">
+  <h2>2. Παρατηρώ τις υποστιβάδες</h2>
+  <p>Παρατήρησε τις τιμές του <b>n+l</b> και τις αντίστοιχες ενεργειακές στάθμες.</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Όταν οι τιμές n+l είναι διαφορετικές</h3>
+      <p>Η υποστιβάδα με το <b>μικρότερο n+l</b> έχει τη <b>μικρότερη ενέργεια</b>.</p>
+    </div>
+    <div class="card">
+      <h3>Όταν οι τιμές n+l είναι ίδιες</h3>
+      <p>Συγκρίνουμε το <b>n</b>. Η υποστιβάδα με το <b>μικρότερο n</b> έχει τη <b>μικρότερη ενέργεια</b>.</p>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Υποστιβάδα</th><th>n</th><th>l</th><th>n+l</th></tr>
+    <tr><td>3s</td><td>3</td><td>0</td><td><b>3</b></td></tr>
+    <tr><td>3p</td><td>3</td><td>1</td><td><b>4</b></td></tr>
+    <tr><td>4s</td><td>4</td><td>0</td><td><b>4</b></td></tr>
+    <tr><td>3d</td><td>3</td><td>2</td><td><b>5</b></td></tr>
+  </table>
+  <div class="energy">
+    <div class="axis"></div>
+    <div class="label" style="top:8px">Μεγαλύτερη ενέργεια</div>
+    <div class="level l4"><span>3d</span></div>
+    <div class="level l3"><span>4s</span></div>
+    <div class="level l2"><span>3p</span></div>
+    <div class="level l1"><span>3s</span></div>
+    <div class="label" style="bottom:8px">Μικρότερη ενέργεια</div>
+  </div>
+  <p class="question">Παρατήρησε αν οι ενεργειακές στάθμες επιβεβαιώνουν τις δύο παραπάνω σχέσεις.</p>
+  <textarea id="obs" rows="3" style="width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font:inherit" placeholder="Γράψε την παρατήρησή σου..."></textarea>
+</section>
+
+<section class="screen" id="s3">
+  <h2>3. Προβλέπω και ελέγχω την πρόβλεψή μου</h2>
+  <div id="pairArea"></div>
+</section>
+
+
+<section class="screen" id="s4">
+  <h2>4. Ελέγχω το κριτήριο σε διαφορετικές υποστιβάδες</h2>
+  <p>Τώρα έλεγξε αν το κριτήριο που ανακάλυψες λειτουργεί και σε άλλα ζεύγη υποστιβάδων.</p>
+
+  <div class="pair">
+    <div class="card"><div class="big">4p</div><p>n+l = <b>5</b></p></div>
+    <div class="card"><div class="big">5s</div><p>n+l = <b>5</b></p></div>
+  </div>
+  <div class="question">Ποια προβλέπεις ότι έχει μικρότερη ενέργεια;</div>
+  <div class="choices">
+    <button class="choice" onclick="multiCheck(this,'4p')">4p</button>
+    <button class="choice" onclick="multiCheck(this,'5s')">5s</button>
+  </div>
+
+  <div class="pair" style="margin-top:20px">
+    <div class="card"><div class="big">3d</div><p>n+l = <b>5</b></p></div>
+    <div class="card"><div class="big">4p</div><p>n+l = <b>5</b></p></div>
+  </div>
+  <div class="question">Κάνε ξανά την πρόβλεψή σου για αυτό το ζεύγος.</div>
+  <div class="choices">
+    <button class="choice" onclick="multiCheck2(this,'3d')">3d</button>
+    <button class="choice" onclick="multiCheck2(this,'4p')">4p</button>
+  </div>
+
+  <div id="multiFeedback" class="feedback"></div>
+  <div id="multiFeedback2" class="feedback"></div>
+
+  <div class="final" style="margin-top:20px">
+    <b>Τι επιβεβαιώνω;</b>
+    <p>Όταν το <b>n+l</b> είναι ίδιο, συγκρίνω το <b>n</b>. Η υποστιβάδα με το μικρότερο <b>n</b> έχει μικρότερη ενέργεια.</p>
+  </div>
+</section>
+
+<section class="screen" id="s4">
+  <h2>5. Όταν το n+l είναι ίδιο</h2>
+  <div class="pair">
+    <div class="card"><div class="big">3d</div><p>n = 3, l = 2</p><p><b>n+l = 5</b></p></div>
+    <div class="card"><div class="big">4p</div><p>n = 4, l = 1</p><p><b>n+l = 5</b></p></div>
+  </div>
+  <div class="question">Οι δύο υποστιβάδες έχουν την ίδια τιμή n+l. Ποια έχει μικρότερη ενέργεια;</div>
+  <div class="choices">
+    <button class="choice" onclick="equalChoice(this,'3d')">3d</button>
+    <button class="choice" onclick="equalChoice(this,'4p')">4p</button>
+  </div>
+  <div id="equalFeedback" class="feedback"></div>
+  <div class="feedback show" style="margin-top:18px">
+    <b>Θυμάμαι την αρχική μου πρόβλεψη:</b>
+    <span id="rememberPrediction">Δεν έχει καταγραφεί.</span>
+    <div style="margin-top:10px">
+      <button class="secondary" onclick="rememberOriginalPrediction()">Επαναλαμβάνω την πρόβλεψή μου</button>
+    </div>
+  </div>
+</section>
+
+<section class="screen" id="s5">
+  <h2>6. Πού θα τοποθετηθεί πρώτα το ηλεκτρόνιο; Ελέγχω την πρόβλεψή μου</h2>
+  <div class="pair">
+    <div class="card"><div class="big">4s</div><p>n = 4, l = 0</p><p><b>n+l = 4</b></p></div>
+    <div class="card"><div class="big">3d</div><p>n = 3, l = 2</p><p><b>n+l = 5</b></p></div>
+  </div>
+  <div class="question">Με βάση όσα ανακάλυψες, ποια υποστιβάδα έχει μικρότερη ενέργεια;</div>
+  <div class="choices">
+    <button class="choice" onclick="finalChoice(this,'4s')">4s</button>
+    <button class="choice" onclick="finalChoice(this,'3d')">3d</button>
+  </div>
+  <div id="finalFeedback" class="feedback"></div>
+</section>
+
+<section class="screen" id="s6">
+  <h2>7. Τι ανακαλύψαμε;</h2>
+  <div class="final">
+    <h3>Γενικό συμπέρασμα</h3>
+    <p>
+      Στη θεμελιώδη κατάσταση, τα ηλεκτρόνια καταλαμβάνουν πρώτα τις
+      <b>υποστιβάδες χαμηλότερης ενέργειας</b>, γιατί έτσι το άτομο βρίσκεται
+      σε μεγαλύτερη σταθερότητα και στη χαμηλότερη δυνατή ενεργειακή κατάσταση.
+    </p>
+
+    <h3>Πώς συγκρίνουμε την ενέργεια των υποστιβάδων;</h3>
+    <p>
+      Για τη σύγκριση δύο υποστιβάδων εξετάζουμε την τιμή <b>n+l</b>.
+      Η υποστιβάδα με τη μικρότερη τιμή <b>n+l</b> έχει μικρότερη ενέργεια.
+      Όταν οι τιμές <b>n+l</b> είναι ίσες, μικρότερη ενέργεια έχει η υποστιβάδα
+      με το μικρότερο <b>n</b>.
+    </p>
+
+    <div class="result show">
+      <b>Αρχή της Ελάχιστης Ενέργειας</b><br><br>
+      Τα ηλεκτρόνια στη θεμελιώδη κατάσταση καταλαμβάνουν πρώτα τις
+      υποστιβάδες χαμηλότερης ενέργειας.
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span id="counter">Οθόνη 1 από 6</span>
+  <div>
+    <button class="secondary" id="prev" onclick="prevScreen()" disabled>Προηγούμενη</button>
+    <button class="primary" id="next" onclick="nextScreen()">Επόμενη</button>
+  </div>
+</footer>
+</div>
+
+<script>
+let current=1;
+let prediction=null;
+const total=7;
+
+function update(){
+  document.querySelectorAll('.screen').forEach((s,i)=>s.classList.toggle('active',i===current-1));
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i<=current-1));
+  document.getElementById('counter').textContent=`Οθόνη ${current} από ${total}`;
+  document.getElementById('prev').disabled=current===1;
+  document.getElementById('next').textContent=current===total?'Τέλος':'Επόμενη';
+}
+function nextScreen(){
+  if(current<total){current++; if(current===3) buildPairs(); update();}
+}
+function prevScreen(){if(current>1){current--;update();}}
+function selectChoice(btn,type){
+  document.querySelectorAll('#s1 .choice').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected'); prediction=btn.dataset.choice;
+  const f=document.getElementById('predFeedback');
+  f.textContent='Η πρόβλεψή σου καταγράφηκε. Η προσομοίωση δεν αποκαλύπτει ακόμη την απάντηση.';
+  f.classList.add('show');
+  document.getElementById('predictionReview').classList.add('show');
+  document.getElementById('predictionText').textContent =
+    prediction==='4s' ? '4s' : prediction==='3d' ? '3d' : 'Δεν μπορώ ακόμη να προβλέψω';
+}
+function reviewPrediction(){
+  document.querySelectorAll('#s1 .choice').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('predFeedback').classList.remove('show');
+  document.getElementById('predictionReview').classList.remove('show');
+  prediction=null;
+}
+const pairs=[
+  {a:'3s',av:3,b:'3p',bv:4,correct:'3s'},
+  {a:'3p',av:4,b:'4s',bv:4,correct:'3p'},
+  {a:'4s',av:4,b:'3d',bv:5,correct:'4s'}
+];
+let pi=0;
+function buildPairs(){
+  pi=0; renderPair();
+}
+function renderPair(){
+  const p=pairs[pi];
+  document.getElementById('pairArea').innerHTML=`
+    <div class="pair">
+      <div class="card"><div class="big">${p.a}</div><p>n+l = <b>${p.av}</b></p></div>
+      <div class="card"><div class="big">${p.b}</div><p>n+l = <b>${p.bv}</b></p></div>
+    </div>
+    <div class="question">Ποια υποστιβάδα προβλέπεις ότι έχει μικρότερη ενέργεια;</div>
+    <div class="choices">
+      <button class="choice" onclick="pairChoice(this,'${p.a}')">${p.a}</button>
+      <button class="choice" onclick="pairChoice(this,'${p.b}')">${p.b}</button>
+    </div>
+    <div id="pairFeedback" class="feedback"></div>
+    <div style="margin-top:18px"><button class="primary" id="checkPair" onclick="checkPair()" disabled>Έλεγχος</button>
+    <button class="secondary" id="nextPair" onclick="nextPair()" style="display:none">Επόμενο ζεύγος</button></div>
+  `;
+}
+let selectedPair=null;
+function pairChoice(btn,val){
+  document.querySelectorAll('#pairArea .choice').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected'); selectedPair=val; document.getElementById('checkPair').disabled=false;
+}
+function checkPair(){
+  const p=pairs[pi], f=document.getElementById('pairFeedback');
+  f.textContent=(selectedPair===p.correct)
+    ? 'Η πρόβλεψή σου επιβεβαιώνεται από την ενεργειακή σχέση.'
+    : `Η προσομοίωση δείχνει ότι η ${p.correct} έχει μικρότερη ενέργεια. Παρατήρησε ξανά τις τιμές n+l.`;
+  f.classList.add('show');
+  document.getElementById('checkPair').style.display='none';
+  if(pi<pairs.length-1) document.getElementById('nextPair').style.display='inline-block';
+}
+function nextPair(){pi++;selectedPair=null;renderPair();}
+function multiCheck(btn,val){
+  document.querySelectorAll('#s4 .choice').forEach(b=>{
+    if (b.parentElement === btn.parentElement) b.classList.remove('selected');
+  });
+  btn.classList.add('selected');
+  const f=document.getElementById('multiFeedback');
+  f.textContent=val==='4p'
+    ? 'Σωστά. Αφού το n+l είναι ίδιο, η 4p έχει μικρότερο n και μικρότερη ενέργεια.'
+    : 'Έλεγξε ξανά το n. Οι δύο υποστιβάδες έχουν ίδιο n+l, οπότε συγκρίνουμε το n.';
+  f.classList.add('show');
+}
+function multiCheck2(btn,val){
+  document.querySelectorAll('#s4 .choice').forEach(b=>{
+    if (b.parentElement === btn.parentElement) b.classList.remove('selected');
+  });
+  btn.classList.add('selected');
+  const f=document.getElementById('multiFeedback2');
+  f.textContent=val==='3d'
+    ? 'Σωστά. Η 3d έχει μικρότερο n από την 4p και επομένως μικρότερη ενέργεια.'
+    : 'Έλεγξε ξανά το n. Η 3d έχει μικρότερο n.';
+  f.classList.add('show');
+}
+function equalChoice(btn,val){
+  document.querySelectorAll('#s4 .choice').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const f=document.getElementById('equalFeedback');
+  f.textContent=val==='3d'
+    ? 'Σωστά. Αφού το n+l είναι ίδιο, εξετάζουμε το n. Η 3d έχει μικρότερο n και μικρότερη ενέργεια.'
+    : 'Έλεγξε ξανά το n. Όταν το n+l είναι ίδιο, εξετάζουμε ποια υποστιβάδα έχει μικρότερο n.';
+  f.classList.add('show');
+}
+function rememberOriginalPrediction(){
+  const text = prediction==='4s' ? '4s' : prediction==='3d' ? '3d' : prediction==='unknown' ? 'Δεν μπορούσα ακόμη να προβλέψω' : 'Δεν έχει καταγραφεί.';
+  document.getElementById('rememberPrediction').textContent = text;
+}
+function finalChoice(btn,val){
+  document.querySelectorAll('#s5 .choice').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const f=document.getElementById('finalFeedback');
+  f.textContent=val==='4s'
+    ? 'Σωστά. Η 4s έχει μικρότερο n+l, άρα χαμηλότερη ενέργεια και καταλαμβάνεται πρώτη.'
+    : 'Ξαναδές τις τιμές n+l. Η μικρότερη τιμή αντιστοιχεί στη χαμηλότερη ενέργεια.';
+  f.classList.add('show');
+}
+function showRule(){
+  document.getElementById('rule').classList.add('show');
+}
+update();
+</script>
+</body>
+</html>
